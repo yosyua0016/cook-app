@@ -8,7 +8,7 @@ development:
   username: root
   password:
   host: localhost
-  database: cook-app_development
+  database: cook_app_development
 
 test:
   <<: *default
@@ -16,7 +16,7 @@ test:
   username: root
   password:
   host: localhost
-  database: cook-app_rails7_test
+  database: cook_app_rails7_test
 
 production:
   <<: *default

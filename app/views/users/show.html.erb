@@ -1,0 +1,16 @@
+<!-- users/show.html.erb -->
+<div class="container">
+  <h2>マイページ</h2>
+  <h3><%= @user.username %> さんの投稿一覧</h3>
+  <% @user.posts.each do |post| %>
+    <div class="post">
+      <%= image_tag post.image, class: 'post-image' if post.image.attached? %>
+      <h3><%= post.title %></h3>
+      <p><%= post.comment %></p>
+      <p><%= post.category.name %></p>
+      <% if current_user == post.user %>
+        <%= link_to "編集", edit_post_path(post) %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
