@@ -2,13 +2,14 @@
 <html>
 <head>
   <title>CookApp</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= javascript_importmap_tags %>
   <%= stylesheet_link_tag "style" %> <!-- 追加 -->
+  <%= stylesheet_link_tag "background" %> <!-- 新しいCSSファイルを読み込む -->
 </head>
 
 <body>

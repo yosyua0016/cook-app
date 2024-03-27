@@ -30,3 +30,9 @@ header a, footer p {
 header a:last-child {
   margin-right: 0;
 }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
