@@ -54,3 +54,12 @@
   border-radius: 0.25rem;
   margin-top: 0.75rem;
 }
+
+.custom-button-secondary {
+  background-color: #6c757d;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  text-decoration: none; /* リンクの下線を非表示にする */
+}
