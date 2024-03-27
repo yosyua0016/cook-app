@@ -1,4 +1,5 @@
 <!-- posts/index.html.erb -->
+<!-- posts/index.html.erb -->
 <div class="container">
   <h1 class="text-center mb-4 fw-bold">食活しよう！！</h1>
   <p class="text-center fw-bold fs-5">当アプリは食事で生活習慣病などの身近な病気を</p>
@@ -16,14 +17,16 @@
   <!-- 最新の3つの投稿を表示する -->
   <div class="row mt-4">
     <% @posts.each do |post| %>
-      <div class="post">
-        <%= image_tag post.image.variant(resize: "300x200").processed, class: 'post-image' if post.image.attached? %>
-        <h3><%= post.title %></h3>
-        <p><%= post.comment %></p>
-        <p><%= post.category.name %></p>
-        <% if current_user == post.user %>
-          <%= link_to "編集", edit_post_path(post) %>
-        <% end %>
+      <div class="col-md-4">
+        <div class="mb-4">
+          <%= link_to image_tag(post.image.variant(resize: "300x200").processed, class: 'post-image'), post %>
+          <h3><%= post.title %></h3>
+          <p><%= post.comment %></p>
+          <p><%= post.category.name %></p>
+          <% if current_user == post.user %>
+            <%= link_to "編集", edit_post_path(post), class: "btn btn-secondary" %>
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>
