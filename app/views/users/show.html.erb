@@ -1,16 +1,22 @@
 <!-- users/show.html.erb -->
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="user_show.css">
+</head>
 <div class="container">
-  <h2><%= @user.username %> のマイページ</h2>
+  <h3><%= @user.username %> のマイページ</h3>
   <h3><%= @user.username %> さんの投稿一覧</h3>
   <% @user.posts.each do |post| %>
     <div class="post">
+      <h3>タイトル : <%= post.title %></h3>
       <%= image_tag post.image, class: 'post-image' if post.image.attached? %>
-      <h3><%= post.title %></h3>
-      <p><%= post.comment %></p>
-      <p><%= post.category.name %></p>
+      <p>カテゴリー : <%= post.category.name %></p>
+      <p>コメント : <%= post.comment %></p>
       <% if current_user == post.user %>
         <%= link_to "編集", edit_post_path(post), class: "btn btn-edit" %>
-        <%= link_to "削除", post_path, data: {turbo_method: :delete}, class: "btn btn-danger" %>
+        <%= link_to "削除", post_path, data: {turbo_method: :delete}, class: "btn btn-delete" %>
       <% end %>
     </div>
   <% end %>
