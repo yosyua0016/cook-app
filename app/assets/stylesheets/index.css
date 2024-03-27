@@ -63,3 +63,15 @@
   border-radius: 0.25rem;
   text-decoration: none; /* リンクの下線を非表示にする */
 }
+
+.container{
+  text-align: center;
+}
+
+.content{
+  font-size: 45px;
+}
+
+.content-font{
+  border: 10px solid #ccc;
+}

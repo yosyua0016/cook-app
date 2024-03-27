@@ -9,12 +9,14 @@
 <body>
   <div class="container">
     <div class="content">
-      <h1>食活しよう！！</h1>
-      <p>当アプリは食事で生活習慣病などの身近な病気を</p>
-      <p>予防できるようにしたいと思い作られたものです。</p>
-      <p>予防につながる食材や料理を写真付きで</p>
-      <p>カテゴリー別で投稿して下さい。</p>
-
+      <div class="content-font">
+        <h1>食活しよう！！</h1>
+        <p>当アプリは食事で生活習慣病などの身近な病気を</p>
+        <p>予防できるようにしたいと思い作られたものです。</p>
+        <p>予防につながる食材や料理を写真付きで</p>
+        <p>カテゴリー別で投稿して下さい。</p>
+        <p>！カテゴリー別検索実装予定。！</p>
+      </div>
       <!-- ログイン状態であれば投稿ボタンを表示 -->
       <% if user_signed_in? %>
         <%= form_with(url: new_post_path, method: :get) do %>
@@ -33,9 +35,6 @@
               <h3 class="post-title"><%= post.title %></h3>
               <p class="post-comment"><%= post.comment %></p>
               <p class="post-category"><%= post.category.name %></p>
-              <% if current_user == post.user %>
-                <%= link_to "編集", edit_post_path(post), class: "custom-button-secondary" %>
-              <% end %>
             </div>
           </div>
         <% end %>

@@ -8,12 +8,11 @@
         <%= image_tag @post.image.variant(resize: "600x400") %>
       <% end %>
       <p><%= @post.comment %></p>
-      <%= link_to "編集", edit_post_path(@post) %>
+      <% if user_signed_in? && current_user == @post.user %>
+        <%= link_to "編集", edit_post_path(@post) %>
+        <%= link_to "削除", @post, method: :delete, data: { confirm: "本当に削除しますか?" } %>
+      <% end %>
     </div>
   </div>
 </div>
 
-<% if user_signed_in? && current_user == @post.user %>
-  <%= link_to "編集", edit_post_path(@post) %>
-  <%= link_to "削除", @post, method: :delete, data: { confirm: "本当に削除しますか?" } %>
-<% end %>

@@ -17,6 +17,8 @@ footer {
   height: 70px;
   background-color: gray;
   display: flex;
+  bottom: 0;
+  position: absolute;
   align-items: center;
   justify-content: center;
 }
