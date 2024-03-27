@@ -36,3 +36,11 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+.notice {
+  color: green;
+}
+
+.alert {
+  color: red;
+}

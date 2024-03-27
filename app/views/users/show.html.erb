@@ -1,6 +1,6 @@
 <!-- users/show.html.erb -->
 <div class="container">
-  <h2>マイページ</h2>
+  <h2><%= @user.username %> のマイページ</h2>
   <h3><%= @user.username %> さんの投稿一覧</h3>
   <% @user.posts.each do |post| %>
     <div class="post">
