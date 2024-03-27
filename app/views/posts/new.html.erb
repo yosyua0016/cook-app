@@ -2,18 +2,26 @@
 <div class="container">
   <h2>新規投稿</h2>
   <%= form_with(model: @post, local: true) do |form| %>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <div class="form-group">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: "form-control" %>
+    </div>
 
-    <%= form.label :category_id %>
-    <%= form.collection_select :category_id, Category.all, :id, :name %>
+    <div class="form-group">
+      <%= form.label :category_id %>
+      <%= form.collection_select :category_id, Category.all, :id, :name, { prompt: "選択してください" }, class: "form-control" %>
+    </div>
 
-    <%= form.label :image %>
-    <%= form.file_field :image %>
+    <div class="form-group">
+      <%= form.label :image %>
+      <%= form.file_field :image, class: "form-control" %>
+    </div>
 
-    <%= form.label :comment %>
-    <%= form.text_area :comment %>
+    <div class="form-group">
+      <%= form.label :comment %>
+      <%= form.text_area :comment, class: "form-control" %>
+    </div>
 
-    <%= form.submit "投稿する" %>
+    <%= form.submit "投稿する", class: "btn btn-primary" %>
   <% end %>
 </div>
