@@ -1,0 +1,19 @@
+<!-- posts/new.html.erb -->
+<div class="container">
+  <h2>新規投稿</h2>
+  <%= form_with(model: @post, local: true) do |form| %>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+
+    <%= form.label :category_id %>
+    <%= form.collection_select :category_id, Category.all, :id, :name %>
+
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+
+    <%= form.label :comment %>
+    <%= form.text_area :comment %>
+
+    <%= form.submit "投稿する" %>
+  <% end %>
+</div>
