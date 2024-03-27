@@ -1,4 +1,10 @@
 <!-- posts/new.html.erb -->
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="post_new.css">
+</head>
 <div class="container">
   <h2>新規投稿</h2>
   <%= form_with(model: @post, local: true) do |form| %>
@@ -25,3 +31,4 @@
     <%= form.submit "投稿する", class: "btn btn-primary" %>
   <% end %>
 </div>
+</html>
