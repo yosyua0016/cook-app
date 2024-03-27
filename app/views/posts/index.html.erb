@@ -1,7 +1,6 @@
 <!-- posts/index.html.erb -->
-<!-- posts/index.html.erb -->
 <div class="container">
-  <h1 class="text-center mb-4 fw-bold">食活しよう！！</h1>
+  <h1 class="text-center mb-4 fw-bold fs-2">食活しよう！！</h1>
   <p class="text-center fw-bold fs-5">当アプリは食事で生活習慣病などの身近な病気を</p>
   <p class="text-center fw-bold fs-5">予防できるようにしたいと思い作られたものです。</p>
   <p class="text-center fw-bold fs-5">予防につながる食材や料理を写真付きで</p>
@@ -9,7 +8,9 @@
 
   <!-- ログイン状態であれば投稿ボタンを表示 -->
   <% if user_signed_in? %>
-    <%= link_to "投稿する", new_post_path, class: "btn btn-primary mt-3" %>
+    <%= form_with(url: new_post_path, method: :get) do %>
+      <%= submit_tag "投稿する", class: "custom-button" %>
+    <% end %>
   <% else %>
     <%= link_to "ログインして投稿する", new_user_session_path, class: "btn btn-primary mt-3" %>
   <% end %>
@@ -18,11 +19,11 @@
   <div class="row mt-4">
     <% @posts.each do |post| %>
       <div class="col-md-4">
-        <div class="mb-4">
+        <div class="mb-4 post-card">
           <%= link_to image_tag(post.image.variant(resize: "300x200").processed, class: 'post-image'), post %>
-          <h3><%= post.title %></h3>
-          <p><%= post.comment %></p>
-          <p><%= post.category.name %></p>
+          <h3 class="post-title"><%= post.title %></h3>
+          <p class="post-comment"><%= post.comment %></p>
+          <p class="post-category"><%= post.category.name %></p>
           <% if current_user == post.user %>
             <%= link_to "編集", edit_post_path(post), class: "btn btn-secondary" %>
           <% end %>
