@@ -32,9 +32,9 @@
           <div class="col-md-4">
             <div class="mb-4 post-card">
               <%= link_to image_tag(post.image.variant(resize: "300x200").processed, class: 'post-image'), post %>
-              <h3 class="post-title"><%= post.title %></h3>
-              <p class="post-comment"><%= post.comment %></p>
-              <p class="post-category"><%= post.category.name %></p>
+              <h3 class="post-title">タイトル : <%= post.title %></h3>
+              <p class="post-category">カテゴリー : <%= post.category.name %></p>
+              <p class="post-comment">コメント : <%= post.comment %></p>
             </div>
           </div>
         <% end %>

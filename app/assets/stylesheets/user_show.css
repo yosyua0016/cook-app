@@ -2,6 +2,8 @@
   border: 5px solid #ccc;
   padding: 10px;
   margin-bottom: 40px;
+  width: auto;
+  height: auto;
 }
 
 .post-image {

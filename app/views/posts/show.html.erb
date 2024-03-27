@@ -7,16 +7,16 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8">
-      <h3><%= @post.title %></h3>
-      <p>投稿者: <%= @post.user.name %></p>
-      <p>カテゴリー: <%= @post.category.name %></p>
+      <h3>タイトル : <%= @post.title %></h3>
+      <p>カテゴリー : <%= @post.category.name %></p>
+      <p>投稿者 : <%= @post.user.name %></p>
       <% if @post.image.attached? %>
         <%= image_tag @post.image.variant(resize: "1000x800") %>
       <% end %>
-      <p><%= @post.comment %></p>
+      <p>コメント : <%= @post.comment %></p>
       <% if user_signed_in? && current_user == @post.user %>
-        <%= link_to "編集", edit_post_path(@post), class: "post-action-btn" %>
-        <%= link_to "削除", @post, method: :delete, data: { confirm: "本当に削除しますか?" },class: "post-action-btn" %>
+        <%= link_to "編集", edit_post_path(@post), class: "btn btn-edit" %>
+        <%= link_to "削除", @post, method: :delete, data: { confirm: "本当に削除しますか?" },class: "btn btn-delete" %>
       <% end %>
     </div>
   </div>

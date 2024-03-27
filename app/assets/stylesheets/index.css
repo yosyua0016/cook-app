@@ -6,11 +6,13 @@
   border-radius: 8px;
   padding: 15px;
   margin: 20px;
+  width: 300px; /* 投稿カードの幅を固定 */
 }
 
 /* 投稿画像のスタイル */
 .post-image {
-  width: 100%;
+  width: 100%; /* 投稿画像の幅を100%に設定 */
+  max-height: 200px; /* 投稿画像の高さを最大200pxに制限 */
   border-radius: 8px;
 }
 
