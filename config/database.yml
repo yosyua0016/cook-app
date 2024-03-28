@@ -16,7 +16,7 @@ test:
   username: root
   password:
   host: localhost
-  database: cook_app_rails7_test
+  database: cook_app_test
 
 production:
   <<: *default
