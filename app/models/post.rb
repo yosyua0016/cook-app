@@ -16,6 +16,6 @@ class Post < ApplicationRecord
   end
 
   def image_presence
-    errors.add(:image, "を選択してください") unless image.attached?
+    errors.add(:image, 'を選択してください') unless image.attached?
   end
 end

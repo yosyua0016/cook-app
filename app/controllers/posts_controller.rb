@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to @post, notice: "投稿が作成されました。"
+      redirect_to @post, notice: '投稿が作成されました。'
     else
       render :new
     end
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to root_path, notice: "投稿が更新されました。"
+      redirect_to root_path, notice: '投稿が更新されました。'
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to root_path, notice: "投稿が削除されました。"
+    redirect_to root_path, notice: '投稿が削除されました。'
   end
 
   def show
