@@ -14,4 +14,6 @@ class Category < ActiveHash::Base
   include ActiveHash::Associations
   has_many :posts
 
+  validates :name, presence: true
+  
 end
