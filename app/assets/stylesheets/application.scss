@@ -13,16 +13,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-}
-
-footer {
-  height: 70px;
-  background-color: gray;
-  display: flex;
-  bottom: 0;
-  position: absolute;
-  align-items: center;
-  justify-content: center;
+  position: fixed; /* ページの上部に固定 */
+  width: 100%; /* ヘッダーの幅をページ幅に合わせる */
 }
 
 header a, footer p {
@@ -33,12 +25,6 @@ header a, footer p {
 
 header a:last-child {
   margin-right: 0;
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
 }
 
 .notice {
