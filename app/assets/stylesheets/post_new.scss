@@ -1,0 +1,32 @@
+@import "bootstrap";
+
+.container {
+  margin-top: 50px; /* 上部に余白を追加 */
+}
+
+.card {
+  max-width: 500px; /* カードの最大幅を設定 */
+  margin: 0 auto; /* カードを中央に配置 */
+}
+
+.card-title {
+  color: #333; /* タイトルの色を設定 */
+}
+
+.form-group {
+  margin-bottom: 20px; /* フォームグループの下部に余白を追加 */
+}
+
+.text-center {
+  margin-top: 30px; /* 中央寄せされた要素の上部に余白を追加 */
+}
+
+.btn-primary {
+  background-color: #007bff; /* ボタンの背景色を設定 */
+  border-color: #007bff; /* ボタンの枠線の色を設定 */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* ホバー時の背景色を設定 */
+  border-color: #0056b3; /* ホバー時の枠線の色を設定 */
+}
