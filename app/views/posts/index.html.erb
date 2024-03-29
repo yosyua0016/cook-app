@@ -5,16 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>食活しよう！！</title>
   <%= stylesheet_link_tag "application", integrity: "sha384-rkAsTpS3L99Bz9uG5Y7uxmV2VJcJg6b6unE8BHOz7e0OaHntUVI+hS5X39dVNLid", crossorigin: "anonymous" %>
-  <%= stylesheet_link_tag "index" %> <!-- index.scssを読み込む -->
+  <%= stylesheet_link_tag "index" %> 
 </head>
 <body>
   <div class="container">
     <div class="content">
-      <div class="content-font">
+      <div class="container">
         <h1>食活しよう！！</h1>
         <p>当アプリは食事で生活習慣病などの身近な病気を予防できるようにしたいと思い作られたものです。</p>
         <p>予防につながる食材や料理を写真付きでカテゴリー別で投稿して下さい。</p>
-        <p>！カテゴリー別検索実装予定。！</p>
       </div>
       <!-- ログイン状態であれば投稿ボタンを表示 -->
       <% if user_signed_in? %>

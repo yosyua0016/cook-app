@@ -1,23 +1,28 @@
-<!-- users/show.html.erb -->
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="user_show.css">
+  <%= stylesheet_link_tag "application", integrity: "sha384-rkAsTpS3L99Bz9uG5Y7uxmV2VJcJg6b6unE8BHOz7e0OaHntUVI+hS5X39dVNLid", crossorigin: "anonymous" %>
+  <%= stylesheet_link_tag "user_show" %>
 </head>
-<div class="container">
-  <h3><%= @user.username %> のマイページ</h3>
-  <h3><%= @user.username %> さんの投稿一覧</h3>
-  <% @user.posts.each do |post| %>
-    <div class="post">
-      <h3>タイトル : <%= post.title %></h3>
-      <%= image_tag post.image, class: 'post-image' if post.image.attached? %>
-      <p>カテゴリー : <%= post.category.name %></p>
-      <p>コメント : <%= post.comment %></p>
-      <% if current_user == post.user %>
-        <%= link_to "編集", edit_post_path(post), class: "btn btn-edit" %>
-        <%= link_to "削除", post_path, data: {turbo_method: :delete}, class: "btn btn-delete" %>
-      <% end %>
-    </div>
-  <% end %>
-</div>
+<body>
+  <div class="container">
+    <h3><%= @user.username %> のマイページ</h3>
+    <h3><%= @user.username %> さんの投稿一覧</h3>
+    <% @user.posts.each do |post| %>
+      <div class="card post mb-4">
+        <div class="card-body">
+          <h3 class="card-title">タイトル : <%= post.title %></h3>
+          <%= image_tag post.image, class: 'card-img-top post-image' if post.image.attached? %>
+          <p class="card-text">カテゴリー : <%= post.category.name %></p>
+          <p class="card-text">コメント : <%= post.comment %></p>
+          <% if current_user == post.user %>
+            <%= link_to "編集", edit_post_path(post), class: "btn btn-success btn-edit mr-2" %>
+            <%= link_to "削除", post_path, data: {turbo_method: :delete}, class: "btn btn-danger btn-delete" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</body>
+</html>

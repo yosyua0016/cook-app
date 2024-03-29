@@ -2,23 +2,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="post_show.css">
+  <title>投稿詳細</title>
+  <%= stylesheet_link_tag "application", integrity: "sha384-rkAsTpS3L99Bz9uG5Y7uxmV2VJcJg6b6unE8BHOz7e0OaHntUVI+hS5X39dVNLid", crossorigin: "anonymous" %>
+  <%= stylesheet_link_tag "post_show" %> 
 </head>
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <h3>タイトル : <%= @post.title %></h3>
-      <p>カテゴリー : <%= @post.category.name %></p>
-      <p>投稿者 : <%= @post.user.name %></p>
-      <% if @post.image.attached? %>
-        <%= image_tag @post.image.variant(resize: "1000x800") %>
-      <% end %>
-      <p>コメント : <%= @post.comment %></p>
-      <% if user_signed_in? && current_user == @post.user %>
-        <%= link_to "編集", edit_post_path(@post), class: "btn btn-edit" %>
-        <%= link_to "削除", @post, method: :delete, data: { confirm: "本当に削除しますか?" },class: "btn btn-delete" %>
-      <% end %>
+<body>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">タイトル : <%= @post.title %></h3>
+            <p class="card-text">カテゴリー : <%= @post.category.name %></p>
+            <p class="card-text">投稿者 : <%= @post.user.name %></p>
+            <% if @post.image.attached? %>
+              <%= image_tag @post.image.variant(resize: "1000x800"), class: "card-img-top" %>
+            <% end %>
+            <p class="card-text">コメント : <%= @post.comment %></p>
+            <% if user_signed_in? && current_user == @post.user %>
+              <%= link_to "編集", edit_post_path(@post), class: "btn btn-primary me-2" %>
+              <%= link_to "削除", @post, method: :delete, data: { confirm: "本当に削除しますか?" }, class: "btn btn-danger" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</body>
 </html>

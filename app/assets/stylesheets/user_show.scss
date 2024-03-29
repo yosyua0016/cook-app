@@ -1,0 +1,86 @@
+/* user_show.scss */
+@import "bootstrap";
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.header {
+  height: 120px;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.footer {
+  height: 70px;
+  background-color: gray;
+  display: flex;
+  bottom: 0;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+}
+
+.header a, .footer p {
+  margin: 20px 30px;
+  font-size: 30px;
+  color: black;
+}
+
+.header a:last-child {
+  margin-right: 0;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.notice {
+  color: green;
+}
+
+.alert {
+  color: red;
+}
+
+/* 追加したクラスのスタイル */
+.user-info {
+  background-color: #f8f9fa;
+  padding: 20px;
+  margin-bottom: 30px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+.user-info h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.post-actions {
+  margin-top: 20px;
+}
+
+/* マージンを下に追加 */
+.post {
+  margin-bottom: 40px;
+}
+
+/* 画像の最大幅を100%に設定 */
+.post-image {
+  width: 500px; /* 画像の幅を300pxに設定 */
+  height: 500px; /* 画像の高さを200pxに設定 */
+  object-fit: cover; /* 画像を可能な限り拡大して表示 */
+}
+
+/* 編集ボタンの右側マージンを追加 */
+.btn-edit {
+  margin-right: 10px;
+}
