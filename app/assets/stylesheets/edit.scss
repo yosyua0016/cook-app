@@ -15,4 +15,10 @@
 .edit-form-wrapper {
   background-color: #fff; /* 背景色を白に設定 */
   padding: 20px; /* 必要に応じて余白を追加 */
+  max-width: 600px; /* カードの幅を調整 */
+  margin: 0 auto; /* カードを中央に配置 */
+}
+
+.form-label {
+  font-weight: bold; /* ラベルを太字に */
 }
