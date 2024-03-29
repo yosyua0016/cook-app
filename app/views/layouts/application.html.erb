@@ -8,11 +8,12 @@
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= javascript_include_tag 'application', 'data-turbo-track': 'reload' %>
   <%= stylesheet_link_tag "application", integrity: "sha384-rkAsTpS3L99Bz9uG5Y7uxmV2VJcJg6b6unE8BHOz7e0OaHntUVI+hS5X39dVNLid", crossorigin: "anonymous" %>
+  <%= stylesheet_link_tag "background" %>
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <header class="text-center">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
       <div class="container-fluid">
         <%= link_to "CookApp", root_path, class: "navbar-brand" %>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,7 +44,7 @@
 
   <%= yield %>
 
-  <footer class="fixed-bottom">
+  <footer class="fixed-bottom text-center">
     <div class="container">
       <p>SYOKUKATU</p>
     </div>
