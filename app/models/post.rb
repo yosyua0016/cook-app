@@ -6,7 +6,7 @@ class Post < ApplicationRecord
 
   with_options presence: true do
     validates :image
-    validates :comment, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, only_integer: true }
+    validates :comment, presence: true, length: { minimum: 1 }
     validates :category_id
     validates :title
   end

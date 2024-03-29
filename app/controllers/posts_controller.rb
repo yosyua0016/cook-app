@@ -24,9 +24,12 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to root_path, notice: '投稿が更新されました。'
+      redirect_to @post, notice: '投稿が更新されました。'
     else
+      # バリデーションエラーメッセージを表示する
+      puts @post.errors.full_messages
       render :edit
     end
   end
