@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>食活しよう！！</title>
-  <link rel="stylesheet" href="index.css">
+  <%= stylesheet_link_tag "application", integrity: "sha384-rkAsTpS3L99Bz9uG5Y7uxmV2VJcJg6b6unE8BHOz7e0OaHntUVI+hS5X39dVNLid", crossorigin: "anonymous" %>
 </head>
 <body>
   <div class="container">
@@ -19,9 +19,7 @@
       </div>
       <!-- ログイン状態であれば投稿ボタンを表示 -->
       <% if user_signed_in? %>
-        <%= form_with(url: new_post_path, method: :get) do %>
-          <%= submit_tag "投稿する", class: "custom-button" %>
-        <% end %>
+        <%= link_to "投稿する", new_post_path, class: "btn btn-primary mt-3" %>
       <% else %>
         <%= link_to "ログインして投稿する", new_user_session_path, class: "btn btn-primary mt-3" %>
       <% end %>

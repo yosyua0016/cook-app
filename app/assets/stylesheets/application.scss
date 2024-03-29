@@ -1,1 +1,50 @@
 @import "bootstrap";
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+header {
+  height: 120px;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+footer {
+  height: 70px;
+  background-color: gray;
+  display: flex;
+  bottom: 0;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+}
+
+header a, footer p {
+  margin: 20px 30px;
+  font-size: 30px;
+  color: black;
+}
+
+header a:last-child {
+  margin-right: 0;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.notice {
+  color: green;
+}
+
+.alert {
+  color: red;
+}
