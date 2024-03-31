@@ -18,7 +18,6 @@
           <p class="card-text">コメント : <%= post.comment %></p>
           <% if current_user == post.user %>
             <%= link_to "編集", edit_post_path(post), class: "btn btn-success btn-edit mr-2" %>
-            <%= link_to "削除", post_path, data: {turbo_method: :delete}, class: "btn btn-danger btn-delete" %>
           <% end %>
         </div>
       </div>

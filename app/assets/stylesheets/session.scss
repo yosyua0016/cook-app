@@ -1,4 +1,4 @@
-@import "bootstrap";
+
 
 .container {
   margin-top: 50px; /* 上部に余白を追加 */
@@ -7,6 +7,15 @@
 .card {
   max-width: 500px; /* カードの最大幅を設定 */
   margin: 0 auto; /* カードを中央に配置 */
+  border: 1px solid #ccc; /* 白色の枠を追加 */
+  padding: 20px; /* 内側の余白を追加 */
+}
+
+.form-wrap {
+  margin-top: 70px;
+  border: 1px solid #ccc; /* 白色の枠を追加 */
+  padding: 20px; /* 内側の余白を追加 */
+  background-color: #fff;
 }
 
 .card-title {
@@ -29,8 +38,4 @@
 .btn-primary:hover {
   background-color: #0056b3; /* ホバー時の背景色を設定 */
   border-color: #0056b3; /* ホバー時の枠線の色を設定 */
-}
-
-body, html {
-  height: 100%;
 }

@@ -1,5 +1,13 @@
 @import "bootstrap";
 
+// 共通スタイル
+body {
+  background-image: url('syokukatu.png');
+  background-repeat: repeat-y;
+  background-size: cover; /* 画像を画面いっぱいに表示 */
+  background-position: center; /* 画像を中央に配置 */
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -7,24 +15,41 @@
   padding: 0 30px;
 }
 
-header {
+.header {
   height: 120px;
   background-color: gray;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  position: fixed; /* ページの上部に固定 */
-  width: 100%; /* ヘッダーの幅をページ幅に合わせる */
+
+  a, .footer p {
+    margin: 20px 30px;
+    font-size: 30px;
+    color: black;
+  }
+
+  a:last-child {
+    margin-right: 0;
+  }
 }
 
-header a, footer p {
-  margin: 20px 30px;
-  font-size: 30px;
-  color: black;
-}
+.footer {
+  height: 70px;
+  background-color: gray;
+  display: flex;
+  bottom: 0;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 
-header a:last-child {
-  margin-right: 0;
+  p {
+    margin: 20px 30px;
+    font-size: 30px;
+    color: black;
+  }
 }
 
 .notice {
@@ -34,10 +59,122 @@ header a:last-child {
 .alert {
   color: red;
 }
-body {
-  background-image: url('syokukatu.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: repeat-y;
-  margin-bottom: 70px;
+
+// 新規投稿ページのスタイル
+.card {
+  max-width: 500px;
+  margin: 20px auto;
+  
+  &-body {
+    text-align: center;
+    
+    .card-title {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .text-center {
+      margin-top: 30px;
+    }
+    
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      &:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+      }
+    }
+  }
+}
+
+// ユーザー情報
+.user-info {
+  background-color: #f8f9fa;
+  padding: 20px;
+  margin-bottom: 30px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+
+  h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .post-actions {
+    margin-top: 20px;
+  }
+}
+
+// ポスト
+.post {
+  margin-bottom: 40px;
+
+  &-image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  &-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  &-comment {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+
+  &-category {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+}
+
+// レスポンシブデザイン
+@media (max-width: 767px) {
+  .header a, .footer p {
+    font-size: 20px;
+  }
+
+  .card {
+    &-body {
+      .card-title {
+        font-size: 1.5rem;
+      }
+      
+      .btn-primary {
+        font-size: 1.2rem;
+        padding: 8px 16px;
+      }
+    }
+  }
+
+  .user-info {
+    h3 {
+      font-size: 20px;
+    }
+  }
+
+  .post {
+    &-title {
+      font-size: 1.5rem;
+    }
+
+    &-comment {
+      font-size: 1rem;
+    }
+
+    &-category {
+      font-size: 1.2rem;
+    }
+  }
 }
